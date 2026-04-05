@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Priority Limousine Collection | Singapore Premium Chauffeur Service</title>
+
+
+
+    <style>
+/* Import Playfair Display (Luxury Fallback) & Lato (Clean Paragraphs) */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400&display=swap');
+
+/* CSS Styling for a Premium Look */
+
+        body {
+            margin: 0;
+            font-family: 'Lato', 'Helvetica Neue', Arial, sans-serif; /* Clean font for easy reading */
+            background-color: #0a0a0a;
+            color: #ffffff;
+        }
+        
+        /* Apply Didot to all Headings for that luxurious, high-fashion aesthetic */
+        h1, h2, h3, h4 {
+            font-family: 'Didot', 'Playfair Display', serif;
+            font-weight: 400;
+        }
+
+/* Updated Fleet Card CSS */
+
+        .fleet-card {
+            background-color: #111111;
+            padding: 20px; /* Slightly tighter padding to frame the image */
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+        .fleet-img {
+            width: 100%;
+            height: 220px; /* Keeps all vehicle photos the exact same height */
+            object-fit: cover; /* Ensures photos don't look stretched or squished */
+            border-radius: 3px;
+            margin-bottom: 20px;
+        }
+        .fleet-card h4 {
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+        .fleet-card p {
+            color: #888888;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+/* Updated Services Section (Staggered Layout with Photos) */
+        .services {
+            padding: 80px 20px;
+            background-color: #111111;
+        }
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+            font-weight: 300;
+            color: #d4af37;
+            text-align: center;
+        }
+        .service-row {
+            display: flex;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto 80px auto; /* 80px space between each row */
+            gap: 50px;
+        }
+        /* Reverses the order for every second row so they alternate */
+        .service-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+        .service-image-container {
+            flex: 1;
+        }
+        .service-img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            border-radius: 5px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5); /* Adds a subtle luxury shadow */
+        }
+        .service-text {
+            flex: 1;
+        }
+        .service-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+        .service-text p {
+            color: #aaaaaa;
+            line-height: 1.8;
+            font-size: 1.05rem;
+        }
+        
+        /* Mobile Responsiveness for Services */
+        @media (max-width: 768px) {
+            .service-row, .service-row:nth-child(even) {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            .service-img {
+                height: 250px;
+            }
+        }
+
+
+/* Hero Section */
+
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            /* TO CHANGE THE HERO PHOTO: Replace the URL below with a link to a photo of your S-Class or Alphard */
+            background: linear-gradient(rgba(10, 10, 10, 0.7), rgba(10, 10, 10, 0.8)), url('http://prestigemotorsport.com.au/wp-content/uploads/2016/06/Toyota-Alphard-and-Vellfire-30-Series-Z-G-EDITION-seat-colour.jpg') center/cover;
+            padding: 0 20px;
+        }
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            color: #cccccc;
+            max-width: 600px;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .btn-primary {
+            background-color: #d4af37;
+            color: #000;
+            padding: 15px 35px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+        .btn-primary:hover {
+            background-color: #b5952f;
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #111111;
+        }
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+            color: #d4af37;
+        }
+        .services-grid {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+        .service-card {
+            background-color: #1a1a1a;
+            padding: 40px 30px;
+            flex: 1;
+            min-width: 300px;
+            border-top: 3px solid #d4af37;
+            text-align: left;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+        .service-card p {
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+
+        /* Fleet Section */
+        .fleet {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #0a0a0a;
+        }
+        .fleet h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            font-weight: 300;
+            color: #d4af37;
+        }
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .fleet-card {
+            background-color: #111111;
+            padding: 30px 20px;
+            border: 1px solid #333;
+            border-radius: 5px;
+        }
+        .fleet-card h4 {
+            font-size: 1.3rem;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+        .fleet-card p {
+            color: #888888;
+            font-size: 0.9rem;
+            margin: 0;
+        }
+
+/* Smooth Scroll Animation (Right to Left) */
+        .slide-in-right {
+            opacity: 0;
+            transform: translateX(60px); /* Starts 60px to the right */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        /* The class that gets added when scrolled into view */
+        .slide-in-right.appear {
+            opacity: 1;
+            transform: translateX(0); /* Slides to its original position */
+        }
+        
+        /* Optional: Add a slight delay for paragraphs to follow headings */
+        p.slide-in-right {
+            transition-delay: 0.2s;
+        }
+        
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1>Priority Limousine Collection</h1>
+        <p>Singapore’s Premier Chauffeur Service. Delivering unparalleled comfort, absolute discretion, and flawless punctuality for discerning travelers.</p>
+        <a href="https://wa.me/88009803" class="btn-primary">Book via WhatsApp</a>
+    </header>
+
+<section class="services">
+        <h2 class="slide-in-right">Our Bespoke Services</h2>
+        
+        <div class="service-row">
+            <div class="service-image-container slide-in-right">
+                <img src="https://images.unsplash.com/photo-1542296332-2e4473faf563?auto=format&fit=crop&q=80&w=800" alt="Changi Airport Arrivals" class="service-img">
+            </div>
+            <div class="service-text slide-in-right">
+                <h3>Airport Transfers</h3>
+                <p>Experience seamless arrivals and departures. Our dedicated logistics team monitors your flight in real-time, ensuring your chauffeur is waiting exactly when you land. Enjoy personal meet-and-greet service at the arrival hall and a complimentary 60-minute waiting time, so you never feel rushed.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-image-container slide-in-right">
+                <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Corporate Roadshow Singapore" class="service-img">
+            </div>
+            <div class="service-text slide-in-right">
+                <h3>Corporate & Executive Meetings</h3>
+                <p>Designed meticulously for the modern executive. Whether you are navigating a complex multi-stop financial roadshow through the CBD or require a reliable point-to-point transfer for a crucial meeting, we provide the absolute discretion and punctuality necessary for you to arrive prepared.</p>
+            </div>
+        </div>
+
+        <div class="service-row">
+            <div class="service-image-container slide-in-right">
+                <img src="https://i.imgur.com/i7hmMJ5.jpeg?auto=format&fit=crop&q=80&w=800" alt="Hourly Limousine Disposal" class="service-img">
+            </div>
+            <div class="service-text slide-in-right">
+                <h3>Hourly Bookings</h3>
+                <p>Ultimate flexibility at your command. Retain your preferred chauffeur and premium vehicle for a dedicated block of hours. This service is ideal for fluid itineraries, VIP evening events, luxury shopping excursions along Orchard Road, or comprehensive city tours tailored to your schedule.</p>
+            </div>
+        </div>
+
+    </section>
+  
+  <section class="fleet">
+        <h2 class="slide-in-right">Our Premium Fleet</h2>
+        <div class="fleet-grid">
+            
+            <div class="fleet-card">
+                <img src="https://paultan.org/image/2023/06/2023-Toyota-Alphard-MODELLISTA-COOL-SHINE-KIT-1.jpg" alt="Toyota Alphard 40 Series" class="fleet-img">
+                <h4 class="slide-in-right">Toyota Alphard</h4>
+                <p class="slide-in-right">The pinnacle of luxury MPV travel, offering ultimate cabin space and executive comfort.</p>
+            </div>
+
+            <div class="fleet-card">
+                <img src="https://stimg.cardekho.com/images/carexteriorimages/930x620/Toyota/Vellfire/10337/1749879912109/exterior-image-166.jpg" alt="Toyota Alphard 30 Series" class="fleet-img">
+                <h4 class="slide-in-right">Toyota Vellfire</h4>
+                <p class="slide-in-right">A flagship MPV delivering a smooth, premium ride for executives and families alike.</p>
+            </div>
+
+            <div class="fleet-card">
+                <img src="https://hips.hearstapps.com/mtg-prod/65f804a2811a870008940b72/01-2024-mercedes-benz-s-class-front-view-motion.jpg" alt="Mercedes-Benz S-Class" class="fleet-img">
+                <h4 class="slide-in-right">Mercedes-Benz S-Class</h4>
+                <p class="slide-in-right">First-class luxury sedan. The standard for VIP discretion and supreme riding comfort.</p>
+            </div>
+
+            <div class="fleet-card">
+                <img src="https://static0.hotcarsimages.com/wordpress/wp-content/uploads/2023/05/23c0021_011.jpg" alt="Mercedes-Benz E-Class" class="fleet-img">
+                <h4 class="slide-in-right">Mercedes-Benz E-Class</h4>
+                <p class="slide-in-right">The definitive executive sedan, perfect for corporate transfers and city business.</p>
+            </div>
+
+            <div class="fleet-card">
+                <img src="https://www.topgear.com/sites/default/files/cars-car/image/2024/11/Mercedes_VClass__0002.jpg" alt="Mercedes-Benz V-Class" class="fleet-img">
+                <h4 class="slide-in-right">Mercedes-Benz V-Class</h4>
+                <p class="slide-in-right">A luxury multi-purpose vehicle combining Mercedes elegance with spacious group seating.</p>
+            </div>
+
+            <div class="fleet-card">
+                <img src="https://scontent-sin6-1.xx.fbcdn.net/v/t39.30808-6/483102880_1043699357800840_7498761193228909502_n.jpg?stp=dst-jpg_p180x540_tt6&_nc_cat=111&ccb=1-7&_nc_sid=7b2446&_nc_ohc=KzP2JJwcnw0Q7kNvwEMDq3v&_nc_oc=AdqjmMHD1syPZmvO1e0NWLfxeNrMrK7yN4Byog7CBxCbsJVZD4HJzTHL-bwikiKD-IY&_nc_zt=23&_nc_ht=scontent-sin6-1.xx&_nc_gid=8vkOMSlYdujFfLsAoEyp7Q&_nc_ss=7a3a8&oh=00_Af2SWQ3-1ANmoU4tzPxnZDzeurLRSXz6KqogXg4wCuR1DA&oe=69D7D0FD" alt="Toyota Hiace 13-Seater" class="fleet-img">
+                <h4 class="slide-in-right">Toyota Hiace (13-Seater)</h4>
+                <p class="slide-in-right">Premium high-capacity transport, ideal for corporate roadshows and large event logistics.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <style>
+/* CSS for Booking and Footer (Add this to your existing <style> tag) */
+        .booking {
+            padding: 80px 20px;
+            background-color: #111111;
+            border-top: 1px solid #222;
+            text-align: center;
+        }
+        .booking h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+            color: #d4af37;
+        }
+        .booking-container {
+            display: flex;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+            gap: 40px;
+            text-align: left;
+        }
+        .booking-form {
+            flex: 2;
+            background-color: #1a1a1a;
+            padding: 40px;
+            border-radius: 5px;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #aaaaaa;
+            font-size: 0.9rem;
+        }
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            background-color: #0a0a0a;
+            border: 1px solid #333;
+            color: #fff;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        .form-control:focus {
+            outline: none;
+            border-color: #d4af37;
+        }
+        .booking-info {
+            flex: 1;
+            padding: 40px 0;
+        }
+        .booking-info h3 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+        .booking-info p {
+            color: #aaaaaa;
+            line-height: 1.6;
+        }
+        .whatsapp-btn {
+            display: inline-block;
+            background-color: #25D366;
+            color: #fff;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 3px;
+            margin-top: 20px;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #050505;
+            padding: 50px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+        }
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: #777;
+            font-size: 0.9rem;
+            line-height: 1.8;
+        }
+        .footer-content a {
+            color: #d4af37;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+    </style>
+
+    <section class="booking">
+        <h2>Reserve Your Journey</h2>
+        <div class="booking-container">
+            
+            <div class="booking-form">
+                <form action="#" method="POST">
+                    <div class="form-group">
+                        <label for="name">Full Name / Company</label>
+                        <input type="text" id="name" class="form-control" placeholder="Enter your name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Service Type</label>
+                        <select id="service" class="form-control">
+                            <option>Airport Arrival</option>
+                            <option>Airport Departure</option>
+                            <option>Hourly Charter</option>
+                            <option>Corporate MICE</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="vehicle">Preferred Vehicle</label>
+                        <select id="vehicle" class="form-control">
+                            <option>Toyota Alphard/Vellfire</option>
+                            <option>Mercedes-Benz S-Class</option>
+                            <option>Mercedes-Benz E-Class</option>
+                            <option>Mercedes-Benz V-Class</option>
+                            <option>Toyota Hiace (13-Seater)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="details">Journey Details (Date, Time, Pickup/Drop-off)</label>
+                        <textarea id="details" class="form-control" rows="4" placeholder="Please provide your flight number or itinerary details..."></textarea>
+                    </div>
+                    <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Request Quote</button>
+                </form>
+            </div>
+
+            <div class="booking-info">
+                <h3>Direct Concierge</h3>
+                <p>For urgent bookings within 24 hours, or to discuss complex corporate itineraries, please contact our dispatch team directly.</p>
+                <p><strong>Operating Hours:</strong> 24/7 / 365 Days</p>
+                <p><strong>Email:</strong> prioritylimousine27@gmail.com</p>
+                <a href="https://wa.me/88009803" class="whatsapp-btn">Chat on WhatsApp</a>
+            </div>
+
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2026 Priority Limousine Collection Singapore. All Rights Reserved.</p>
+            <p>
+               <a href="privacy.html">Privacy Policy</a> | 
+               <a href="terms.html">Terms & Conditions</a> | 
+               <a href="corporate.html">Corporate Accounts</a>
+            </p>
+        </div>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sliders = document.querySelectorAll('.slide-in-right');
+            
+            const appearOptions = {
+                threshold: 0.15, // Triggers when 15% of the text is visible
+                rootMargin: "0px 0px -50px 0px"
+            };
+
+            const appearOnScroll = new IntersectionObserver(function(entries, observer) {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        return;
+                    } else {
+                        entry.target.classList.add('appear');
+                        observer.unobserve(entry.target); // Stops it from repeating if they scroll up and down
+                    }
+                });
+            }, appearOptions);
+
+            sliders.forEach(slider => {
+                appearOnScroll.observe(slider);
+            });
+        });
+    </script>
+</body>
+</html>
